@@ -119,7 +119,102 @@
                 
 
             }
-          
+
+
+            public function book_Magnolia($checkin, $checkout, $name, $phone,$room_size)
+            {
+                    
+                    $sql="SELECT * FROM room_Magnolia WHERE room_size='$room_size' AND (hotel_id NOT IN (SELECT DISTINCT hotel_id
+                          FROM room_Magnolia WHERE checkin <= '$checkin' AND checkout >='$checkout'))";
+                    $check= mysqli_query($this->db,$sql)  or die(mysqli_connect_errno()."Data herecannot inserted");;
+                 
+                    if(mysqli_num_rows($check) > 0)
+                    {
+                        $row = mysqli_fetch_array($check);
+                        $id=$row['hotel_id'];
+                        
+                        $sql2="UPDATE room_Magnolia  SET checkin='$checkin', checkout='$checkout', name='$name', phone='$phone', book='true' WHERE hotel_id=$id";
+                         $send=mysqli_query($this->db,$sql2);
+                        if($send)
+                        {
+                            $result="Your Room has been booked!!";
+                        }
+                        else
+                        {
+                            $result="Sorry, Internel Error";
+                        }
+                    }
+                    else                       
+                    {
+                        $result = "No Room Is Available";
+                    }
+              
+                    return $result;
+            }
+
+            public function book_townCentre($checkin, $checkout, $name, $phone,$room_size)
+            {
+                    
+                    $sql="SELECT * FROM room_townCentreRoom WHERE room_size='$room_size' AND (hotel_id NOT IN (SELECT DISTINCT hotel_id
+                          FROM room_townCentreRoom WHERE checkin <= '$checkin' AND checkout >='$checkout'))";
+                    $check= mysqli_query($this->db,$sql)  or die(mysqli_connect_errno()."Data here cannot inserted");;
+                 
+                    if(mysqli_num_rows($check) > 0)
+                    {
+                        $row = mysqli_fetch_array($check);
+                        $id=$row['hotel_id'];
+                        
+                        $sql2="UPDATE room_townCentreRoom  SET checkin='$checkin', checkout='$checkout', name='$name', phone='$phone', book='true' WHERE hotel_id=$id";
+                         $send=mysqli_query($this->db,$sql2);
+                        if($send)
+                        {
+                            $result="Your Room has been booked!!";
+                        }
+                        else
+                        {
+                            $result="Sorry, Internel Error";
+                        }
+                    }
+                    else                       
+                    {
+                        $result = "No Room Is Available";
+                    }
+              
+                    return $result;
+            }
+
+            public function book_parkNorth($checkin, $checkout, $name, $phone,$room_size)
+            {
+                    
+                    $sql="SELECT * FROM room_parkNorthRoom WHERE room_size='$room_size' AND (hotel_id NOT IN (SELECT DISTINCT hotel_id
+                          FROM room_parkNorthRoom WHERE checkin <= '$checkin' AND checkout >='$checkout'))";
+                    $check= mysqli_query($this->db,$sql)  or die(mysqli_connect_errno()."Data here cannot inserted");;
+                 
+                    if(mysqli_num_rows($check) > 0)
+                    {
+                        $row = mysqli_fetch_array($check);
+                        $id=$row['hotel_id'];
+                        
+                        $sql2="UPDATE room_parkNorthRoom  SET checkin='$checkin', checkout='$checkout', name='$name', phone='$phone', book='true' WHERE hotel_id=$id";
+                         $send=mysqli_query($this->db,$sql2);
+                        if($send)
+                        {
+                            $result="Your Room has been booked!!";
+                        }
+                        else
+                        {
+                            $result="Sorry, Internel Error";
+                        }
+                    }
+                    else                       
+                    {
+                        $result = "No Room Is Available";
+                    }
+              
+                    return $result;
+            }
+
+
              public function edit_all_room($checkin, $checkout, $name, $phone,$id)
             {
                                 

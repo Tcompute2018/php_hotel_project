@@ -1,12 +1,7 @@
 <?php
 include_once 'admin/include/class.user.php'; 
 $user=new User();
-
-
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -70,7 +65,7 @@ $user=new User();
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="room.php">Room</a></li>
+                    <li><a href="hotels.php">Hotels</a></li>
                     <li><a href="contact.php">Contact Us</a></li>
                     <li><a href="Manager.php">login/Registration</a></li>
                 </ul>
@@ -88,7 +83,9 @@ $user=new User();
         
         <?php
         
-        $sql="SELECT * FROM room_category";
+        $sql="SELECT * FROM hotelList";
+
+
         $result = mysqli_query($user->db, $sql);
         if($result)
         {
@@ -98,27 +95,21 @@ $user=new User();
                 while($row = mysqli_fetch_array($result))
                 {
                     
+                    
                     echo "
                             <div class='row'>
                             <div class='col-md-2'></div>
                             <div class='col-md-6 well'>
-                                <h4>".$row['bedType']."</h4><hr>
-                                <h6>Number of bed: ".$row['bed_num']." </h6>
-                                <h6>Aminities: ".$row['Amenities']."</h6>
-                                <h6>Price: ".$row['price']." tk/night.</h6>
+                                <h4>".$row['hotels']."</h4><hr>
+                                <h6>Room capacity: ".$row['room_num']." </h6>
+                                <h6>Aminities: ".$row['hotelAmenities']."</h6>
+                                <h6>".$row['room_price']."</h6>
                             </div>
-                            &nbsp;&nbsp;
-                            <a href='admin/edit_room_cat.php?bedType=".$row['bedType']."'><button class='btn btn-primary button'>Edit</button></a>
-                            </div>
-                            
-                        
-                    
-                         ";
-                    
-                    
+                         
+                           
+                            </div>                           
+                         ";                                       
                 }
-                
-                
                           
             }
             else
@@ -131,6 +122,18 @@ $user=new User();
             echo "Cannot connect to server".$result;
         }
 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         ?>
     </div>
     

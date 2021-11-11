@@ -31,7 +31,7 @@ $user=new User();
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
                     <li><a href="index.php">Home</a></li>
-                    <li class="active"><a href="room.php"> Room </a></li>
+                    <li class="active"><a href="hotels.php"> Hotels </a></li>
                     <li><a href="contact.php">Contact</a></li>
                     <li><a href="Manager.php">Login/Registration</a></li>
                     <li><a href="admin/UserLogin.php">User Login</a></li>
@@ -57,11 +57,12 @@ $user=new User();
                     echo "
                             <div class='col-md-4 wellfix'>
                           
-                                <h4>".$row['hotel_id']."</h4>
-                                <h6>Room Amount: ".$row['room_num']."</h6>
-                                <h6>Aminities: ".$row['amenities']."</h6>
-                                <h6>Weekend Differential: ".$row['surcharge']." % nightly rate surcharge.</h6>
-                                <a href='./booknow.php?bedType=".$row['bedType']."'><button>Book Now</button> </a>
+                                <h4>".$row['hotels']."</h4>
+                                <h6>Room Available: ".$row['room_num']."</h6>
+                                <h6>Aminities: ".$row['hotelAmenities']."</h6>
+                                <h6>".$row['room_price']."</h6>
+                                <h6>Weekend Differential: ".$row['Surcharge']." % nightly rate surcharge.</h6>
+                                <a href='hotels/".$row['pickRoomWeb'].".php'><button>Book Now</button> </a>
                                 <h1></h1>                           
                             </div>
 

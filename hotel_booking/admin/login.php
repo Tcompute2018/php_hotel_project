@@ -1,10 +1,11 @@
-<?php session_start(); include_once 'include/class.user.php'; $user=new User(); ?>
+<?php session_start();
+include_once 'include/class.user.php'; $user=new User(); ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Admin Panel</title>
+    <title>LETS BOOK IT</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -75,7 +76,7 @@ p
                     <li><a href="../index.php">Home</a></li>
                     <li><a href="../room.php">Room</a></li>
                     <li><a href="../contact.php">Contact</a></li>
-                    <li class="active"><a href="../Manager.php">login/Registration</a></li>
+                    <li class="active"><a href="../User.php">login/Registration</a></li>
                     <li><a href="UserLogin.php">User Login</a></li>
                     <li><a href="../userRegister.php">User Registration</a></li>
               
@@ -95,7 +96,7 @@ p
                     <label for="password">Password:</label>
                     <input type="password" name="password" value="1234" required>
                 </div>
-                <!--For showing error for wrong input  -->
+               
                 <p id="wrong_id" style=" color:red; font-size:12px; "></p>
 
 

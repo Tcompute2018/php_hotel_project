@@ -78,7 +78,7 @@ if(isset($_GET['q']))
             <div class="container-flM_id">
                 <ul class="nav navbar-nav">
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="room.php">Room</a></li>
+                    <li><a href="hotels.php">Hotels</a></li>
                     <li><a href="contact.php">Contact</a></li>
                     <li class="active"><a href="Manager.php">login/Registration</a></li>
                     <li><a href="userRegister.php">User Registration</a></li>
@@ -99,25 +99,16 @@ if(isset($_GET['q']))
                  <hr>
                   <div style="text-align: center; padding = 40px; margin: 30px;">
                 <ul>
-                    <a href="admin/addroom.php">Add More room</a>
-                </ul>
-                <ul>
                     <a href="show_room_cat.php">Show All Room</a>
-                </ul>
-                <ul>
-                    <a href="show_room_cat.php">Edit Room </a>
                 </ul>
                 <ul>
                     <a href="userProfile.php">Show all User Profiles</a>
                 </ul>
                 <ul>
-                    <a href="room.php">Book Now</a>
+                    <a href="hotels.php">Book Hotels</a>
                  </ul>
                 <ul>
                     <a href="show_all_room.php">Show All Booked Rooms</a>
-                </ul>
-                <ul>
-                    <a href="show_all_room.php">Edit Booked Room</a>
                 </ul>
                 <ul>
                     <a href="admin/registration.php">Add Another Manager</a>

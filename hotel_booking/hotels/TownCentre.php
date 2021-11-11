@@ -1,11 +1,11 @@
 <?php
-    include_once 'admin/include/class.user.php'; 
+    include_once '../admin/include/class.user.php'; 
     $user=new User(); 
-    $bedType=$_GET['bedType'];
+    $room_size=$_GET['room_size'];
     if(isset($_REQUEST[ 'submit'])) 
     { 
         extract($_REQUEST); 
-        $result=$user->booknow($checkin, $checkout, $name, $phone,$bedType);
+        $result=$user->book_townCentre($checkin, $checkout, $name, $phone,$room_size);
         if($result)
         {
             echo "<script type='text/javascript'>
@@ -13,7 +13,7 @@
              </script>";
              echo "
              <script type='text/javascript'>
-                 window.location.href = 'index.php';
+                 window.location.href = '../index.php';
              </script>"; 
         }
     }
@@ -28,7 +28,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>LET's BOOK IT</title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -83,7 +83,7 @@ $( ".datepicker" ).datepicker({
 </head>
 <body>
 <div class = "image">
-      <img src="logo.jpeg" alt="logo" style="width:100px;height:100px;">
+      <img src="../logo.jpeg" alt="logo" style="width:100px;height:100px;">
     </div>
     
     <div class="container">
@@ -91,17 +91,17 @@ $( ".datepicker" ).datepicker({
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="room.php">Room</a></li>
-                    <li><a href="contact.php">Contact</a></li>
-                    <li><a href="Manager.php">login/Registration</a></li>
+                    <li><a href="../index.php">Home</a></li>
+                    <li><a href="../hotels.php">Hotels</a></li>
+                    <li><a href="../contact.php">Contact</a></li>
+                    <li><a href="../Manager.php">login/Registration</a></li>
                 </ul>
             </div>
         </nav>
         <hr>
 
       <div class="well">
-            <h2>Make Reservation for "<?php echo $bedType; ?>"</h2>
+            <h2>Make Reservation for "<?php echo $room_size; ?>"</h2>
             
             <form action="" method="post" name="room_category">
               

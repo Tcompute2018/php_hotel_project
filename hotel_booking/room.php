@@ -3,6 +3,7 @@ include_once 'admin/include/class.user.php';
 $user=new User();
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,10 +11,9 @@ $user=new User();
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  
     <title>LET's BOOK IT</title>
 
-    <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
@@ -42,8 +42,7 @@ $user=new User();
         <hr>
         
         <?php
-        
-        
+                
         $sql="SELECT * FROM room_category";
         $result = mysqli_query($user->db, $sql);
         if($result)
