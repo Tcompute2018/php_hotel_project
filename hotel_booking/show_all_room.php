@@ -1,8 +1,24 @@
-<?php
-include_once 'admin/include/class.user.php'; 
+<?php session_start();
+include_once 'admin/include/class.user.php';
 $user=new User();
+$M_id=$_SESSION[ 'M_id']; 
+if(!$user->get_session()) 
+{ 
+    header("location:admin/login.php"); 
+} 
+if(isset($_GET['q'])) 
+{ 
+    $user->user_logout();
+ header("location:index.php"); 
+} 
 
+     
 ?>
+
+
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -70,7 +86,7 @@ $user=new User();
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="admin.php?q=logout">
+                        <a href="Manager.php?q=logout">
                             <button type="button">Sign Out</button>
                         </a>
                     </li>
@@ -100,6 +116,7 @@ $user=new User();
                                 <h6>Name: ".$row['name']."</h6>
                                 <h6>Phone: ".$row['phone']."</h6>
                                 <h6>Booking Condition: ".$row['book']."</h6>
+                                <a href='hotelsCancelation/RoomMagnoliaCancelation.php?name=".$row['name']."'><button>Cancel </button> </a>
                                 <hr>
 
                          ";
@@ -107,12 +124,10 @@ $user=new User();
                 }
                          
             }
-            else
-            {
-                echo "NO Data Exist";
-            }
+          
         }
         else
+
         {
             echo "Cannot connect to server".$result;
         }
@@ -124,27 +139,25 @@ $user=new User();
             if(mysqli_num_rows($result) > 0)
             {
 //               ********************************************** Show Room Category***********************
-                while($row = mysqli_fetch_array($result))
+                while($row2 = mysqli_fetch_array($result))
                 {
                     
                     echo " 
                             
                                 <h4>The Lofts at Town Centre </h4>
-                                <h4>".$row['room_size']."</h4>
-                                <h6>Checkin: ".$row['checkin']." and checkout: ".$row['checkout']."</h6>
-                                <h6>Name: ".$row['name']."</h6>
-                                <h6>Phone: ".$row['phone']."</h6>
-                                <h6>Booking Condition: ".$row['book']."</h6>
+                                <h4>".$row2['room_size']."</h4>
+                                <h6>Checkin: ".$row2['checkin']." and checkout: ".$row2['checkout']."</h6>
+                                <h6>Name: ".$row2['name']."</h6>
+                                <h6>Phone: ".$row2['phone']."</h6>
+                                <h6>Booking Condition: ".$row2['book']."</h6>
+                                <a href='hotelsCancelation/RoomTownCentreCancelation.php?name=".$row2['name']."'><button>Cancel </button> </a>
                                 <hr>
                          ";
                 
                 }
                                      
             }
-            else
-            {
-                echo "NO Data Exist";
-            }
+          
         }
         else
         {
@@ -152,23 +165,24 @@ $user=new User();
         }
 
         $sq3="SELECT * FROM room_parkNorthRoom WHERE book='true'";
-        $result = mysqli_query($user->db, $sq2);
+        $result = mysqli_query($user->db, $sq3);
         if($result)
         {
             if(mysqli_num_rows($result) > 0)
             {
 //               ********************************************** Show Room Category***********************
-                while($row = mysqli_fetch_array($result))
+                while($row3 = mysqli_fetch_array($result))
                 {
                     
                     echo " 
                            
                                 <h4>Park North Hotel </h4>
-                                <h4>".$row['room_size']."</h4>
-                                <h6>Checkin: ".$row['checkin']." and checkout: ".$row['checkout']."</h6>
-                                <h6>Name: ".$row['name']."</h6>
-                                <h6>Phone: ".$row['phone']."</h6>
-                                <h6>Booking Condition: ".$row['book']."</h6>
+                                <h4>".$row3['room_size']."</h4>
+                                <h6>Checkin: ".$row3['checkin']." and checkout: ".$row3['checkout']."</h6>
+                                <h6>Name: ".$row3['name']."</h6>
+                                <h6>Phone: ".$row3['phone']."</h6>
+                                <h6>Booking Condition: ".$row3['book']."</h6>
+                                <a href='hotelsCancelation/RoomParkNorthCancelation.php?name=".$row3['name']."'><button>Cancel </button> </a>
                                 <hr>
                          ";
                     
@@ -176,23 +190,14 @@ $user=new User();
                 }
                                      
             }
-            else
-            {
-                echo "NO Data Exist";
-            }
+          
         }
         else
         {
             echo "Cannot connect to server".$result;
         }
         
-        
-        
-
-
-
-        // add more room here ------------------------------------------------------
-        
+    
 
 
         ?>

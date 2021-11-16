@@ -26,7 +26,6 @@ if(isset($_GET['q']))
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
     <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 
     <style>
@@ -85,9 +84,11 @@ if(isset($_GET['q']))
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
+
                         <a href="Manager.php?q=logout">
                             <button type="button">Logout</button>
                         </a>
+
                     </li>
                 </ul>
             </div>
@@ -112,6 +113,9 @@ if(isset($_GET['q']))
                 </ul>
                 <ul>
                     <a href="admin/registration.php">Add Another Manager</a>
+                </ul>
+                <ul>
+                    <a href="show_all_room.php">cancel a booked room</a>
                 </ul>
             </div>
             

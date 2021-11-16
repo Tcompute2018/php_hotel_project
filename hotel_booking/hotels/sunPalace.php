@@ -2,13 +2,10 @@
     include_once '../admin/include/class.user.php'; 
     $user=new User(); 
     $room_size=$_GET['room_size'];
-    $sql="SELECT * FROM UserName";
-    $U_id =uniqid();
-
     if(isset($_REQUEST[ 'submit'])) 
     { 
         extract($_REQUEST); 
-        $result=$user->book_Magnolia($checkin, $checkout, $name, $phone,$room_size,$U_id);
+        $result=$user->book_sunPalace($checkin, $checkout, $name, $phone,$room_size);
         if($result)
         {
             echo "<script type='text/javascript'>
@@ -85,7 +82,7 @@ $( ".datepicker" ).datepicker({
   </style>
 </head>
 <body>
-    <div class = "image">
+<div class = "image">
       <img src="../logo.jpeg" alt="logo" style="width:100px;height:100px;">
     </div>
     
@@ -102,6 +99,7 @@ $( ".datepicker" ).datepicker({
             </div>
         </nav>
         <hr>
+
       <div class="well">
             <h2>Make Reservation for "<?php echo $room_size; ?>"</h2>
             
@@ -120,7 +118,7 @@ $( ".datepicker" ).datepicker({
                 </div>
                 <div class="form-group">
                    
-                    <input placeholder ="Enter FULL NAME" type="text" class="form-control" name="name" required>
+                    <input placeholder ="Enter FULL NAME (eg. John Terry)" type="text" class="form-control" name="name" required>
                 </div>
                 <div class="form-group">
                   

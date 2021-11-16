@@ -62,7 +62,7 @@ $user=new User();
                                 <h6>Aminities: ".$row['hotelAmenities']."</h6>
                                 <h6>".$row['room_price']."</h6>
                                 <h6>Weekend Differential: ".$row['Surcharge']." % nightly rate surcharge.</h6>
-                                <a href='hotels/".$row['pickRoomWeb'].".php'><button>Book Now</button> </a>
+                                <a href='hotelsRoom/".$row['pickRoomWeb'].".php'><button>Book Now</button> </a>
                                 <h1></h1>                           
                             </div>
 

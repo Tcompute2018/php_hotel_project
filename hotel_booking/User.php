@@ -2,6 +2,7 @@
 include_once 'admin/include/class.user.php';
 $user=new User();
 $U_id=$_SESSION[ 'U_id']; 
+echo "<h4>".$U_id."</h4>";
 if(!$user->get_session()) 
 { 
     header("location:admin/login.php"); 
@@ -103,11 +104,11 @@ if(isset($_GET['q']))
             {
 
                 while($row = mysqli_fetch_array($result))
-                {
-                    if ($row['U_id'] == $U_id)
+                {   
+                    if ($row['U_id'] == $U_id){
                     echo "
                             <div style = 'text-align:center' class='col-md-4 wellfix'>
-
+                                
                                 <h4 style = 'font-size: 30px'>WellCome Back</h4>
                                 <h4>".$row['U_fullname']."</h4>
                                 <h4>Password: ".$row['U_password']."</h4>
@@ -116,6 +117,7 @@ if(isset($_GET['q']))
                             </div>
 
                          "; //echo end  
+                    }
                          $sq2="SELECT * FROM room_Magnolia";
                          $result1 = mysqli_query($user->db, $sq2);
                          
@@ -126,12 +128,12 @@ if(isset($_GET['q']))
                  
                                  while($row1 = mysqli_fetch_array($result1))
                                  {
-                                     if ($row1['name'] == $row['U_fullname']){
-
+                                     if ($row1['name'] == $row['U_fullname'] && $row['U_id'] == $U_id){
+                                            
                                      echo "
-                                     
+                                    
                                              <div style = 'text-align:center' class='col-md-4 wellfix'>
-                                          <h4>test:".$row['U_fullname']."</h4>
+                                          
                                              <h4 style = 'font-size: 30px'>Your Booking at 'The Magnolia All Suites' </h4>
                                                  <h4>Room Number:".$row1['hotel_id']."</h4>
                                                  <h4>Check in date:".$row1['checkin']."</h4>
@@ -140,11 +142,11 @@ if(isset($_GET['q']))
                                                 
                                              </div>
                                             
-                                          "; //echo end  
-                                          
+                                          ";
+                                        
                                      }
-                                      
-                                                                            
+                                    
+                                                                           
                                  }                                      
                              }
                              else
@@ -166,11 +168,10 @@ if(isset($_GET['q']))
                  
                                  while($row2 = mysqli_fetch_array($result2))
                                  {
-                                     if ($row2['name'] == $row['U_fullname']){
-                                     echo " 
+                                     if ($row2['name'] == $row['U_fullname'] && $row['U_id'] == $U_id){
+                                     echo "
                                              <div style = 'text-align:center' class='col-md-4 wellfix'>
-                                             <h4>test:".$row['U_fullname']."</h4>
-                                             <h4>test:".$row2['name']."</h4>
+                                           
                                              <h4 style = 'font-size: 30px'>Your Booking at 'The Magnolia All Suites' </h4>
                                                  <h4>Room Number:".$row2['hotel_id']."</h4>
                                                  <h4>Check in date:".$row2['checkin']."</h4>
@@ -180,8 +181,9 @@ if(isset($_GET['q']))
                                              </div>
                  
                                           "; //echo end  
-                                          
+                                      
                                      }
+                                     
                                    
                                                                             
                                  }                                      
@@ -195,7 +197,45 @@ if(isset($_GET['q']))
                          {
                              echo "Cannot connect to server".$result;
                          }                              
-                }                                      
+                         $sq4="SELECT * FROM room_parkNorthRoom";
+                         $result3 = mysqli_query($user->db, $sq4);
+                         
+                         if($result3)
+                         {
+                             if(mysqli_num_rows($result3) > 0)
+                             {
+                 
+                                 while($row3 = mysqli_fetch_array($result3))
+                                 {
+                                     if ($row3['name'] == $row['U_fullname'] && $row['U_id'] == $U_id){
+                                     echo " 
+                                             <div style = 'text-align:center' class='col-md-4 wellfix'>
+                                          
+                                             <h4 style = 'font-size: 30px'>Your Booking at 'The Magnolia All Suites' </h4>
+                                                 <h4>Room Number:".$row3['hotel_id']."</h4>
+                                                 <h4>Check in date:".$row3['checkin']."</h4>
+                                                 <h4>Check out date:".$row3['checkout']."</h4>
+                                                 <h4>Room Size:".$row3['room_size']."</h4>
+                                                
+                                             </div>
+                 
+                                          "; //echo end  
+                                     
+                                     }
+                                   
+                                                                            
+                                 }                                      
+                             }
+                             else
+                             {
+                                 echo "NO Data Exist";
+                             }
+                         }
+                         else
+                         {
+                             echo "Cannot connect to server".$result;
+                         }  
+                        }                                      
             }
             else
             {

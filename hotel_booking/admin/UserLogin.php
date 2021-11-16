@@ -1,4 +1,6 @@
-<?php session_start(); include_once 'include/class.user.php'; $user=new User(); ?>
+<?php session_start(); 
+include_once 'include/class.user.php'; 
+$user=new User(); ?>
 
 <!DOCTYPE html>
 <html lang="en">

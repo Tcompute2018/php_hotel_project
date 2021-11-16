@@ -2,13 +2,10 @@
     include_once '../admin/include/class.user.php'; 
     $user=new User(); 
     $room_size=$_GET['room_size'];
-    $sql="SELECT * FROM UserName";
-    $U_id =uniqid();
-
     if(isset($_REQUEST[ 'submit'])) 
     { 
         extract($_REQUEST); 
-        $result=$user->book_Magnolia($checkin, $checkout, $name, $phone,$room_size,$U_id);
+        $result=$user->book_Rio($checkin, $checkout, $name, $phone,$room_size);
         if($result)
         {
             echo "<script type='text/javascript'>
@@ -22,6 +19,7 @@
     }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -132,7 +130,7 @@ $( ".datepicker" ).datepicker({
 
                <br>
                 <div id="click_here">
-                    <a href="index.php">Back to Home</a>
+                    <a href="../index.php">Back to Home</a>
                 </div>
 
 
