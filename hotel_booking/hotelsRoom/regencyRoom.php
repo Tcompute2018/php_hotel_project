@@ -103,17 +103,17 @@ $( ".datepicker" ).datepicker({
 //               ********************************************** Show Room Category***********************
                 while($row = mysqli_fetch_array($result))
                 {
-                    if ($row['hotels'] == 'HomeAway Inn' )
+                    if ($row['hotels'] == 'The Regency Rooms' )
                       
                     echo "
                         <div>
-                               <h2 style='color:white'> Welcome to HomeAway Inn </h2>   
+                               <h2 style='color:white'> Welcome to The Regency Rooms</h2>   
                             </div>
                             <div class='form-group'>
                                 <label style= 'font-size:20px; color:yellow' for='room_size'>Pick Your Bed Size:</label>&nbsp;
-                             
-                             <a href='../hotels/homeAway.php?room_size=".$row['room2']."'><button>STANDARD SIZE</button> </a>
-                        
+                             <a href='../hotels/regency.php?room_size=".$row['room1']."'><button>QUEEN SIZE</button> </a>
+                             <a href='../hotels/regency.php?room_size=".$row['room2']."'><button>STANDARD SIZE</button> </a>
+                             <a href='../hotels/regency.php?room_size=".$row['room3']."'><button>KING SIZE</button> </a>
                             </div>
                         </div>
                          "; //echo end                                      

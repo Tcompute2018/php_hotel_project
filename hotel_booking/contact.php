@@ -60,7 +60,7 @@
                     <li><a href="index.php">Home</a></li>
                     <li><a href="hotels.php">Hotels</a></li>
                     <li class="active"><a href="contact.php">Contact</a></li>
-                    <li><a href="Manager.php">login/Registration</a></li>
+                    <li><a href="Manager.php">Manager login</a></li>
                     <li><a href="admin/UserLogin.php">User Login</a></li>
                     <li><a href="userRegister.php">User Registration</a></li>
                 </ul>

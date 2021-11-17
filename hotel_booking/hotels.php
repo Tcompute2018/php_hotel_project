@@ -33,7 +33,7 @@ $user=new User();
                     <li><a href="index.php">Home</a></li>
                     <li class="active"><a href="hotels.php"> Hotels </a></li>
                     <li><a href="contact.php">Contact</a></li>
-                    <li><a href="Manager.php">Login/Registration</a></li>
+                    <li><a href="Manager.php">Manager login</a></li>
                     <li><a href="admin/UserLogin.php">User Login</a></li>
                     <li><a href="userRegister.php">User Registration</a></li>
                 </ul>
@@ -53,7 +53,41 @@ $user=new User();
 //               ********************************************** Show Room Category***********************
                 while($row = mysqli_fetch_array($result))
                 {
-                    
+                    $sq2="SELECT * FROM room_Magnolia";
+                    $result1 = mysqli_query($user->db, $sq2);
+                    $magnolia = 0;
+                    if($result1)
+                    {
+                        if(mysqli_num_rows($result1) > 0)
+                        {
+            
+                            while($row1 = mysqli_fetch_array($result1))
+                            {
+                                if ($row1['book' == 'true'])
+                                {
+                                $magnolia = $row['room_num'] - 1;
+
+                                echo "<h4>".$magnolia." </h4>";
+                                       
+                                }
+                                
+                            }
+                            echo "
+                            <div class='col-md-4 wellfix'>
+                          
+                                <h4>".$row['hotels']."</h4>
+                                <h6>Room Available: ".$magnolia."</h6>
+                                <h6>Aminities: ".$row['hotelAmenities']."</h6>
+                                <h6>".$row['room_price']."</h6>
+                                <h6>Weekend Differential: ".$row['Surcharge']." % nightly rate surcharge.</h6>
+                                <a href='hotelsRoom/".$row['pickRoomWeb'].".php'><button>Book Now</button> </a>
+                                <h1></h1>                           
+                            </div>
+                         ";    
+                        }
+                    }
+
+
                     echo "
                             <div class='col-md-4 wellfix'>
                           

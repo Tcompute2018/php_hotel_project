@@ -74,9 +74,9 @@ p
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
                     <li><a href="../index.php">Home</a></li>
-                    <li><a href="../room.php">Room</a></li>
+                    <li><a href="../hotels.php">Hotels</a></li>
                     <li><a href="../contact.php">Contact</a></li>
-                    <li class="active"><a href="../User.php">login/Registration</a></li>
+                    <li class="active"><a href="../User.php">Manager login</a></li>
                     <li><a href="UserLogin.php">User Login</a></li>
                     <li><a href="../userRegister.php">User Registration</a></li>
               

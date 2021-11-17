@@ -83,7 +83,7 @@ $( ".datepicker" ).datepicker({
                     <li><a href="../index.php">Home</a></li>
                     <li class="active"><a href="hotels.php">Hotels</a></li>
                     <li><a href="../contact.php">Contact</a></li>
-                    <li><a href="../Manager.php">Login/Registration</a></li>
+                    <li><a href="../Manager.php">Manager login</a></li>
                     <li><a href="../admin/UserLogin.php">User Login</a></li>
                     <li><a href="../userRegister.php">User Registration</a></li>
                 </ul>
@@ -103,11 +103,11 @@ $( ".datepicker" ).datepicker({
 //               ********************************************** Show Room Category***********************
                 while($row = mysqli_fetch_array($result))
                 {
-                    if ($row['hotels'] == 'The Magnolia All Suites' )
+                    if ($row['hotels'] == 'Rio Inn' )
                       
                     echo "
                         <div>
-                               <h2 style='color:white'> Welcome to The Magnolia All Suites </h2>   
+                               <h2 style='color:white'> Welcome to Rio Inn </h2>   
                             </div>
                             <div class='form-group'>
                                 <label style= 'font-size:20px; color:yellow' for='room_size'>Pick Your Bed Size:</label>&nbsp;

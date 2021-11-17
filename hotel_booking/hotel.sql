@@ -11,7 +11,7 @@ CREATE TABLE `manager` (
 INSERT INTO `manager` (`M_id`, `M_name`, `M_password`, `M_fullname`, `M_email`) VALUES
 (1, 'tuan', '1234', 'tuan Nguyen', 'tuanNguyen@gmail.com'),
 (2, 'tom', 'tom123', 'tom Johnson', 'tomJohnson@gmail.com'),
-(3, 'admin', '1234', 'admin', 'admin@admin.com');
+(3, 'jessy', '1234', 'jessy henson', 'admin@admin.com');
 
 CREATE TABLE `UserName` (
   `U_id` int(20) NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE `room_Magnolia` (
   `checkout` date NOT NULL,
   `U_id` int(100) NOT NULL,
   `name` text NOT NULL,
-  `phone` int(100) NOT NULL,
+  `phone` text NOT NULL,
   `price` int(100) NOT NULL,
   `book` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -43,8 +43,8 @@ CREATE TABLE `room_Magnolia` (
 INSERT INTO `room_Magnolia` (`hotel_id`, `room_size`, `checkin`, `checkout`,`U_id`, `name`,`phone`,`price`, `book`) VALUES
 (111, 'QUEEN SIZE', '0000-00-00', '0000-00-00',0, '', 0,150,'false'),
 (112, 'QUEEN SIZE', '0000-00-00', '0000-00-00',0, '', 0,150,'false'),
-(113, 'QUEEN SIZE', '0000-00-00', '0000-00-00',0, '', 0,150, 'false'),
-(114, 'KING SIZE', '2021-05-19', '2021-05-22',0, 'tuan Nguyen', 1524587558,250, 'true'),
+(113, 'QUEEN SIZE', '2021-05-19', '2021-05-22',0, 'John Nguyen', '124-342-6421',250, 'true'),
+(114, 'KING SIZE', '2021-05-19', '2021-05-22',0, 'tuan Nguyen', '124-432-6421',250, 'true'),
 (115, 'KING SIZE', '0000-00-00', '0000-00-00',0, '', 0,250, 'false'),
 (116, 'KING SIZE', '0000-00-00', '0000-00-00',0, '', 0,250, 'false'),
 (117, 'STANDARD SIZE', '0000-00-00', '0000-00-00',0, '', 0,100, 'false'),
@@ -61,7 +61,7 @@ CREATE TABLE `room_townCentreRoom` (
   `checkout` date NOT NULL,
   `U_id` int(100) NOT NULL,
   `name` text NOT NULL,
-  `phone` int(100) NOT NULL,
+  `phone` text NOT NULL,
   `price` int(100) NOT NULL,
   `book` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -71,7 +71,7 @@ INSERT INTO `room_townCentreRoom` (`hotel_id`, `room_size`, `checkin`, `checkout
 (111, 'QUEEN SIZE', '0000-00-00', '0000-00-00',0, '', 0,150,'false'),
 (112, 'QUEEN SIZE', '0000-00-00', '0000-00-00',0, '', 0,150,'false'),
 (113, 'QUEEN SIZE', '0000-00-00', '0000-00-00',0, '', 0,150, 'false'),
-(114, 'KING SIZE', '2021-05-19', '2021-05-22',0, 'kevin lamar', 1524587558,250, 'true'),
+(114, 'KING SIZE', '2021-05-19', '2021-05-22',0, 'kevin lamar', '152-458-7558',250, 'true'),
 (115, 'KING SIZE', '0000-00-00', '0000-00-00',0, '', 0,250, 'false'),
 (116, 'KING SIZE', '0000-00-00', '0000-00-00',0, '', 0,250, 'false'),
 (117, 'STANDARD SIZE', '0000-00-00', '0000-00-00',0, '', 0,100, 'false'),
@@ -86,7 +86,7 @@ CREATE TABLE `room_parkNorthRoom` (
   `checkout` date NOT NULL,
   `U_id` int(100) NOT NULL,
   `name` text NOT NULL,
-  `phone` int(100) NOT NULL,
+  `phone` text NOT NULL,
   `price` int(100) NOT NULL,
   `book` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -95,7 +95,7 @@ INSERT INTO `room_parkNorthRoom` (`hotel_id`, `room_size`, `checkin`, `checkout`
 (111, 'QUEEN SIZE', '0000-00-00', '0000-00-00',0, '', 0,150,'false'),
 (112, 'QUEEN SIZE', '0000-00-00', '0000-00-00',0, '', 0,150,'false'),
 (113, 'QUEEN SIZE', '0000-00-00', '0000-00-00',0, '', 0,150, 'false'),
-(114, 'KING SIZE', '2021-05-19', '2021-05-22',0, 'john kolh', 1524587558,250, 'true'),
+(114, 'KING SIZE', '2021-05-19', '2021-05-22',0, 'john kolh', '152-458-7558',250, 'true'),
 (115, 'KING SIZE', '0000-00-00', '0000-00-00',0, '', 0,250, 'false'),
 (116, 'KING SIZE', '0000-00-00', '0000-00-00',0, '', 0,250, 'false'),
 (117, 'STANDARD SIZE', '0000-00-00', '0000-00-00',0, '', 0,100, 'false'),
@@ -109,18 +109,15 @@ CREATE TABLE `room_homeAwayInn` (
   `checkout` date NOT NULL,
   `U_id` int(100) NOT NULL,
   `name` text NOT NULL,
-  `phone` int(100) NOT NULL,
+  `phone` text NOT NULL,
   `price` int(100) NOT NULL,
   `book` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `room_homeAwayInn` (`hotel_id`, `room_size`, `checkin`, `checkout`,`U_id`, `name`,`phone`,`price`, `book`) VALUES
-(111, 'QUEEN SIZE', '0000-00-00', '0000-00-00',0, '', 0,150,'false'),
-(112, 'QUEEN SIZE', '0000-00-00', '0000-00-00',0, '', 0,150,'false'),
-(113, 'QUEEN SIZE', '0000-00-00', '0000-00-00',0, '', 0,150, 'false'),
-(114, 'KING SIZE', '2021-05-19', '2021-05-22',0, 'lucy keith', 12341242,250, 'true'),
-(115, 'KING SIZE', '0000-00-00', '0000-00-00',0, '', 0,250, 'false'),
-(116, 'KING SIZE', '0000-00-00', '0000-00-00',0, '', 0,250, 'false'),
+(114, 'STANDARD SIZE', '2021-05-19', '2021-05-22',0, 'lucy keith', '542-125-4555',250, 'true'),
+(115, 'STANDARD SIZE', '0000-00-00', '0000-00-00',0, '', 0,100, 'false'),
+(116, 'STANDARD SIZE', '0000-00-00', '0000-00-00',0, '', 0,100, 'false'),
 (117, 'STANDARD SIZE', '0000-00-00', '0000-00-00',0, '', 0,100, 'false'),
 (118, 'STANDARD SIZE', '0000-00-00', '0000-00-00',0, '', 0,100, 'false'),
 (119, 'STANDARD SIZE', '0000-00-00', '0000-00-00',0, '', 0,100, 'false');
@@ -132,7 +129,7 @@ CREATE TABLE `room_RioInn` (
   `checkout` date NOT NULL,
   `U_id` int(100) NOT NULL,
   `name` text NOT NULL,
-  `phone` int(100) NOT NULL,
+  `phone` text NOT NULL,
   `price` int(100) NOT NULL,
   `book` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -141,7 +138,7 @@ INSERT INTO `room_RioInn` (`hotel_id`, `room_size`, `checkin`, `checkout`,`U_id`
 (111, 'QUEEN SIZE', '0000-00-00', '0000-00-00',0, '', 0,150,'false'),
 (112, 'QUEEN SIZE', '0000-00-00', '0000-00-00',0, '', 0,150,'false'),
 (113, 'QUEEN SIZE', '0000-00-00', '0000-00-00',0, '', 0,150, 'false'),
-(114, 'KING SIZE', '2021-05-19', '2021-05-22',0, 'henry thomas', 12532112,250, 'true'),
+(114, 'KING SIZE', '2021-05-19', '2021-05-22',0, 'henry thomas', '125-321-2312',250, 'true'),
 (115, 'KING SIZE', '0000-00-00', '0000-00-00',0, '', 0,250, 'false'),
 (116, 'KING SIZE', '0000-00-00', '0000-00-00',0, '', 0,250, 'false'),
 (117, 'STANDARD SIZE', '0000-00-00', '0000-00-00',0, '', 0,100, 'false'),
@@ -155,7 +152,7 @@ CREATE TABLE `room_sunPalace` (
   `checkout` date NOT NULL,
   `U_id` int(100) NOT NULL,
   `name` text NOT NULL,
-  `phone` int(100) NOT NULL,
+  `phone` text NOT NULL,
   `price` int(100) NOT NULL,
   `book` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -164,7 +161,102 @@ INSERT INTO `room_sunPalace` (`hotel_id`, `room_size`, `checkin`, `checkout`,`U_
 (111, 'QUEEN SIZE', '0000-00-00', '0000-00-00',0, '', 0,150,'false'),
 (112, 'QUEEN SIZE', '0000-00-00', '0000-00-00',0, '', 0,150,'false'),
 (113, 'QUEEN SIZE', '0000-00-00', '0000-00-00',0, '', 0,150, 'false'),
-(114, 'KING SIZE', '2021-05-19', '2021-05-22',0, 'bob baby', 2134511,250, 'true'),
+(114, 'KING SIZE', '2021-05-19', '2021-05-22',0, 'bob baby', '123-422-1232',250, 'true'),
+(115, 'KING SIZE', '0000-00-00', '0000-00-00',0, '', 0,250, 'false'),
+(116, 'KING SIZE', '0000-00-00', '0000-00-00',0, '', 0,250, 'false'),
+(117, 'STANDARD SIZE', '0000-00-00', '0000-00-00',0, '', 0,100, 'false'),
+(118, 'STANDARD SIZE', '0000-00-00', '0000-00-00',0, '', 0,100, 'false'),
+(119, 'STANDARD SIZE', '0000-00-00', '0000-00-00',0, '', 0,100, 'false');
+
+
+CREATE TABLE `room_ComfyMotel` (
+  `hotel_id` int(200) NOT NULL,
+  `room_size` text NOT NULL,
+  `checkin` date NOT NULL,
+  `checkout` date NOT NULL,
+  `U_id` int(100) NOT NULL,
+  `name` text NOT NULL,
+  `phone` text NOT NULL,
+  `price` int(100) NOT NULL,
+  `book` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `room_ComfyMotel` (`hotel_id`, `room_size`, `checkin`, `checkout`,`U_id`, `name`,`phone`,`price`, `book`) VALUES
+(111, 'QUEEN SIZE', '0000-00-00', '0000-00-00',0, '', 0,150,'false'),
+(112, 'QUEEN SIZE', '0000-00-00', '0000-00-00',0, '', 0,150,'false'),
+(113, 'QUEEN SIZE', '0000-00-00', '0000-00-00',0, '', 0,150, 'false'),
+(114, 'KING SIZE', '2021-05-19', '2021-05-22',0, 'kenny john', '887-123-1232',250, 'true'),
+(115, 'KING SIZE', '0000-00-00', '0000-00-00',0, '', 0,250, 'false'),
+(116, 'KING SIZE', '0000-00-00', '0000-00-00',0, '', 0,250, 'false'),
+(117, 'STANDARD SIZE', '0000-00-00', '0000-00-00',0, '', 0,100, 'false'),
+(118, 'STANDARD SIZE', '0000-00-00', '0000-00-00',0, '', 0,100, 'false'),
+(119, 'STANDARD SIZE', '0000-00-00', '0000-00-00',0, '', 0,100, 'false');
+
+CREATE TABLE `room_Courtyard` (
+  `hotel_id` int(200) NOT NULL,
+  `room_size` text NOT NULL,
+  `checkin` date NOT NULL,
+  `checkout` date NOT NULL,
+  `U_id` int(100) NOT NULL,
+  `name` text NOT NULL,
+  `phone` text NOT NULL,
+  `price` int(100) NOT NULL,
+  `book` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `room_Courtyard` (`hotel_id`, `room_size`, `checkin`, `checkout`,`U_id`, `name`,`phone`,`price`, `book`) VALUES
+(111, 'QUEEN SIZE', '0000-00-00', '0000-00-00',0, '', 0,150,'false'),
+(112, 'QUEEN SIZE', '0000-00-00', '0000-00-00',0, '', 0,150,'false'),
+(113, 'QUEEN SIZE', '0000-00-00', '0000-00-00',0, '', 0,150, 'false'),
+(114, 'KING SIZE', '2021-05-19', '2021-05-22',0, 'susan anna', '213-451-4433',250, 'true'),
+(115, 'KING SIZE', '0000-00-00', '0000-00-00',0, '', 0,250, 'false'),
+(116, 'KING SIZE', '0000-00-00', '0000-00-00',0, '', 0,250, 'false'),
+(117, 'STANDARD SIZE', '0000-00-00', '0000-00-00',0, '', 0,100, 'false'),
+(118, 'STANDARD SIZE', '0000-00-00', '0000-00-00',0, '', 0,100, 'false'),
+(119, 'STANDARD SIZE', '0000-00-00', '0000-00-00',0, '', 0,100, 'false');
+
+
+CREATE TABLE `room_Regency` (
+  `hotel_id` int(200) NOT NULL,
+  `room_size` text NOT NULL,
+  `checkin` date NOT NULL,
+  `checkout` date NOT NULL,
+  `U_id` int(100) NOT NULL,
+  `name` text NOT NULL,
+  `phone` text NOT NULL,
+  `price` int(100) NOT NULL,
+  `book` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `room_Regency` (`hotel_id`, `room_size`, `checkin`, `checkout`,`U_id`, `name`,`phone`,`price`, `book`) VALUES
+(111, 'QUEEN SIZE', '0000-00-00', '0000-00-00',0, '', 0,150,'false'),
+(112, 'QUEEN SIZE', '0000-00-00', '0000-00-00',0, '', 0,150,'false'),
+(113, 'QUEEN SIZE', '0000-00-00', '0000-00-00',0, '', 0,150, 'false'),
+(114, 'KING SIZE', '2021-05-19', '2021-05-22',0, 'quyen pham', '643-523-2555',250, 'true'),
+(115, 'KING SIZE', '0000-00-00', '0000-00-00',0, '', 0,250, 'false'),
+(116, 'KING SIZE', '0000-00-00', '0000-00-00',0, '', 0,250, 'false'),
+(117, 'STANDARD SIZE', '0000-00-00', '0000-00-00',0, '', 0,100, 'false'),
+(118, 'STANDARD SIZE', '0000-00-00', '0000-00-00',0, '', 0,100, 'false'),
+(119, 'STANDARD SIZE', '0000-00-00', '0000-00-00',0, '', 0,100, 'false');
+
+
+CREATE TABLE `room_TownInnBudget` (
+  `hotel_id` int(200) NOT NULL,
+  `room_size` text NOT NULL,
+  `checkin` date NOT NULL,
+  `checkout` date NOT NULL,
+  `U_id` int(100) NOT NULL,
+  `name` text NOT NULL,
+  `phone` text NOT NULL,
+  `price` int(100) NOT NULL,
+  `book` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `room_TownInnBudget` (`hotel_id`, `room_size`, `checkin`, `checkout`,`U_id`, `name`,`phone`,`price`, `book`) VALUES
+(111, 'QUEEN SIZE', '0000-00-00', '0000-00-00',0, '', 0,150,'false'),
+(112, 'QUEEN SIZE', '0000-00-00', '0000-00-00',0, '', 0,150,'false'),
+(113, 'QUEEN SIZE', '0000-00-00', '0000-00-00',0, '', 0,150, 'false'),
+(114, 'KING SIZE', '2021-05-19', '2021-05-22',0, 'david nguyen', '452-566-2452',250, 'true'),
 (115, 'KING SIZE', '0000-00-00', '0000-00-00',0, '', 0,250, 'false'),
 (116, 'KING SIZE', '0000-00-00', '0000-00-00',0, '', 0,250, 'false'),
 (117, 'STANDARD SIZE', '0000-00-00', '0000-00-00',0, '', 0,100, 'false'),
@@ -244,6 +336,18 @@ ALTER TABLE `room_RioInn`
 ALTER TABLE `room_sunPalace`
   ADD PRIMARY KEY (`hotel_id`);
 
+ALTER TABLE `room_ComfyMotel`
+  ADD PRIMARY KEY (`hotel_id`);
+
+ALTER TABLE `room_Courtyard`
+  ADD PRIMARY KEY (`hotel_id`);
+
+ALTER TABLE `room_Regency`
+  ADD PRIMARY KEY (`hotel_id`);
+
+ALTER TABLE `room_TownInnBudget`
+  ADD PRIMARY KEY (`hotel_id`);
+
 
 
 ALTER TABLE `manager`
@@ -282,4 +386,16 @@ ALTER TABLE `room_RioInn`
   MODIFY `hotel_id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 ALTER TABLE `room_sunPalace`
+  MODIFY `hotel_id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+
+ALTER TABLE `room_ComfyMotel`
+  MODIFY `hotel_id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+
+ALTER TABLE `room_Courtyard`
+  MODIFY `hotel_id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+
+ALTER TABLE `room_Regency`
+  MODIFY `hotel_id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+
+ALTER TABLE `room_TownInnBudget`
   MODIFY `hotel_id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;

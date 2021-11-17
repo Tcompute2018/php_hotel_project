@@ -5,7 +5,7 @@
     if(isset($_REQUEST[ 'submit'])) 
     { 
         extract($_REQUEST); 
-        $result=$user->book_sunPalace($checkin, $checkout, $name, $phone,$room_size);
+        $result=$user->book_comfy($checkin, $checkout, $name, $phone,$room_size);
         if($result)
         {
             echo "<script type='text/javascript'>
@@ -82,7 +82,7 @@ $( ".datepicker" ).datepicker({
   </style>
 </head>
 <body>
-<div class = "image">
+    <div class = "image">
       <img src="../logo.jpeg" alt="logo" style="width:100px;height:100px;">
     </div>
     
@@ -91,7 +91,7 @@ $( ".datepicker" ).datepicker({
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
-                <li><a href="../index.php">Home</a></li>
+                    <li><a href="../index.php">Home</a></li>
                     <li class="active"><a href="../hotels.php">Hotels</a></li>
                     <li><a href="../contact.php">Contact</a></li>
                     <li><a href="../Manager.php">Manager login</a></li>
@@ -101,7 +101,6 @@ $( ".datepicker" ).datepicker({
             </div>
         </nav>
         <hr>
-
       <div class="well">
             <h2>Make Reservation for "<?php echo $room_size; ?>"</h2>
             
@@ -132,7 +131,7 @@ $( ".datepicker" ).datepicker({
 
                <br>
                 <div id="click_here">
-                    <a href="index.php">Back to Home</a>
+                    <a href="../index.php">Back to Home</a>
                 </div>
 
 

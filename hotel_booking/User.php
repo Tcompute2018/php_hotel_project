@@ -2,7 +2,7 @@
 include_once 'admin/include/class.user.php';
 $user=new User();
 $U_id=$_SESSION[ 'U_id']; 
-echo "<h4>".$U_id."</h4>";
+
 if(!$user->get_session()) 
 { 
     header("location:admin/login.php"); 
@@ -79,9 +79,10 @@ if(isset($_GET['q']))
             <div class="container-flU_id">
                 <ul class="nav navbar-nav">
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="room.php">Room</a></li>
+                    <li><a href="hotels.php">Hotels</a></li>
                     <li><a href="contact.php">Contact</a></li>
-                    <li class="active"><a href="User.php">login/Registration</a></li>
+                    <li><a href="Manager.php">Manager Login</a></li>
+                    <li class="active"><a href="User.php">User Login</a></li>
                     <li><a href="userRegister.php">User Registration</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">

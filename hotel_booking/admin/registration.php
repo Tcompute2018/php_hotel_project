@@ -101,9 +101,10 @@ if(isset($_REQUEST[ 'submit']))
             <div class="container-fluid">
                 <ul class="nav navbar-nav">
                     <li><a href="../index.php">Home</a></li>
-                    <li><a href="../room.php">Room</a></li>
+                    <li><a href="../hotels.php">Hotels</a></li>
                     <li><a href="../contact.php">Contact</a></li>
-                    <li><a href="../Manager.php">login/Registration</a></li>
+                    <li class = "active"><a href="../Manager.php">Manager login</a></li>
+                    <li><a href="admin/UserLogin.php">User Login</a></li>
                     <li><a href="../userRegister.php">User Registration</a></li>
                 </ul>
             </div>
@@ -114,11 +115,11 @@ if(isset($_REQUEST[ 'submit']))
             <h2>Add Your Manager</h2>
             <hr>
             <form action="" method="post" name="reg">
-                <div class="form-group">
-                    <input type="text" class="form-control" name="fullname" placeholder="Enter your FUll Name" required>
-                </div>
+            <div class="form-group"> 
+                   <input placeholder ="Enter First and Last Name (eg. John Smith)" type="text" class="form-control" name="name" pattern ="^[A-Za-z]+\s[A-Za-z]+$" required>
+               </div>
                 <div class="form-group">        
-                    <input type="text" class="form-control" name="uname" placeholder="Pick your User Name" required>
+                    <input type="text" class="form-control" name="uname" placeholder="Enter User Name (ex. abc123)" pattern = "^[a-z]{3}[0-9]{3}$"required>
                 </div>
                 <div class="form-group">
                     <input type="email" class="form-control" name="uemail" placeholder="Enter your Email" required>
