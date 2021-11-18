@@ -105,7 +105,7 @@
                         }
                         else
                         {
-                            $result="Sorry, Internel Error";
+                            $result="Sorry, Internal Error";
                         }
                     }
                     else                       
@@ -141,7 +141,7 @@
                         }
                         else
                         {
-                            $result="Sorry, Internel Error";
+                            $result="Sorry, Internal Error";
                         }
                     }
                     else                       
@@ -172,7 +172,7 @@
                         }
                         else
                         {
-                            $result="Sorry, Internel Error";
+                            $result="Sorry, Internal Error";
                         }
                     }
                     else                       
@@ -203,7 +203,7 @@
                         }
                         else
                         {
-                            $result="Sorry, Internel Error";
+                            $result="Sorry, Internal Error";
                         }
                     }
                     else                       
@@ -235,7 +235,7 @@
                         }
                         else
                         {
-                            $result="Sorry, Internel Error";
+                            $result="Sorry, Internal Error";
                         }
                     }
                     else                       
@@ -267,7 +267,7 @@
                         }
                         else
                         {
-                            $result="Sorry, Internel Error";
+                            $result="Sorry, Internal Error";
                         }
                     }
                     else                       
@@ -299,7 +299,7 @@
                         }
                         else
                         {
-                            $result="Sorry, Internel Error";
+                            $result="Sorry, Internal Error";
                         }
                     }
                     else                       
@@ -330,7 +330,7 @@
                         }
                         else
                         {
-                            $result="Sorry, Internel Error";
+                            $result="Sorry, Internal Error";
                         }
                     }
                     else                       
@@ -362,7 +362,7 @@
                         }
                         else
                         {
-                            $result="Sorry, Internel Error";
+                            $result="Sorry, Internal Error";
                         }
                     }
                     else                       
@@ -394,7 +394,7 @@
                         }
                         else
                         {
-                            $result="Sorry, Internel Error";
+                            $result="Sorry, Internal Error";
                         }
                     }
                     else                       
@@ -427,7 +427,7 @@
                         }
                         else
                         {
-                            $result="Sorry, Internel Error";
+                            $result="Sorry, Internal Error";
                         }
                     }
                     else                       
@@ -451,7 +451,7 @@
                         }
                         else
                         {
-                            $result="Sorry, Internel Error";
+                            $result="Sorry, Internal Error";
                         }
                     
                 
@@ -486,7 +486,7 @@
                         }
                         else
                         {
-                            $result="Sorry, Internel Error";
+                            $result="Sorry, Internal Error";
                         }
   
                     
@@ -509,11 +509,11 @@
                          $send=mysqli_query($this->db,$sql);
                         if($send)
                         {
-                            $result="Updated Successfully!!";
+                            $result="The Booking has been cancelled Successfully!!";
                         }
                         else
                         {
-                            $result="Sorry, Internel Error my error";
+                            $result="Sorry, Internal Error my error";
                         }
 
                     return $result;
@@ -529,11 +529,11 @@
                          $send=mysqli_query($this->db,$sql);
                         if($send)
                         {
-                            $result="Updated Successfully!!";
+                            $result="The Booking has been cancelled Successfully!!";
                         }
                         else
                         {
-                            $result="Sorry, Internel Error my error";
+                            $result="Sorry, Internal Error my error";
                         }
 
                     return $result;
@@ -549,11 +549,11 @@
                          $send=mysqli_query($this->db,$sql);
                         if($send)
                         {
-                            $result="Updated Successfully!!";
+                            $result="The Booking has been cancelled Successfully!!";
                         }
                         else
                         {
-                            $result="Sorry, Internel Error my error";
+                            $result="Sorry, Internal Error my error";
                         }
 
                     return $result;
@@ -570,11 +570,11 @@
                          $send=mysqli_query($this->db,$sql);
                         if($send)
                         {
-                            $result="Updated Successfully!!";
+                            $result="The Booking has been cancelled Successfully!!";
                         }
                         else
                         {
-                            $result="Sorry, Internel Error my error";
+                            $result="Sorry, Internal Error my error";
                         }
 
                     return $result;
@@ -591,11 +591,11 @@
                          $send=mysqli_query($this->db,$sql);
                         if($send)
                         {
-                            $result="Updated Successfully!!";
+                            $result="The Booking has been cancelled Successfully!!";
                         }
                         else
                         {
-                            $result="Sorry, Internel Error my error";
+                            $result="Sorry, Internal Error my error";
                         }
 
                     return $result;
@@ -612,11 +612,11 @@
                          $send=mysqli_query($this->db,$sql);
                         if($send)
                         {
-                            $result="Updated Successfully!!";
+                            $result="The Booking has been cancelled Successfully!!";
                         }
                         else
                         {
-                            $result="Sorry, Internel Error my error";
+                            $result="Sorry, Internal Error my error";
                         }
 
                     return $result;
@@ -633,11 +633,11 @@
                          $send=mysqli_query($this->db,$sql);
                         if($send)
                         {
-                            $result="Updated Successfully!!";
+                            $result="The Booking has been cancelled Successfully!!";
                         }
                         else
                         {
-                            $result="Sorry, Internel Error my error";
+                            $result="Sorry, Internal Error my error";
                         }
 
                     return $result;
@@ -653,7 +653,7 @@
                          $send=mysqli_query($this->db,$sql);
                         if($send)
                         {
-                            $result="Updated Successfully!!";
+                            $result="The Booking has been cancelled Successfully!!";
                         }
                         else
                         {
@@ -673,7 +673,7 @@
                          $send=mysqli_query($this->db,$sql);
                         if($send)
                         {
-                            $result="Updated Successfully!!";
+                            $result="The Booking has been cancelled Successfully!!";
                         }
                         else
                         {
@@ -693,7 +693,7 @@
                          $send=mysqli_query($this->db,$sql);
                         if($send)
                         {
-                            $result="Updated Successfully!!";
+                            $result="The Booking has been cancelled Successfully!!";
                         }
                         else
                         {

@@ -60,9 +60,8 @@
                     <li><a href="index.php">Home</a></li>
                     <li><a href="hotels.php">Hotels</a></li>
                     <li class="active"><a href="contact.php">Contact</a></li>
-                    <li><a href="Manager.php">Manager login</a></li>
-                    <li><a href="admin/UserLogin.php">User Login</a></li>
-                    <li><a href="userRegister.php">User Registration</a></li>
+                    <li><a href="Manager.php">Login</a></li>
+                    <li><a href="userRegister.php">Customer Registration</a></li>
                 </ul>
             </div>
         </nav>
@@ -75,7 +74,7 @@
               1 UTSA Circle, San Antonio, TX 78249
               <br>
               University of Texas At San Antonio<br>
-              Mail : Group8@gmail.com <br>
+              Mail : LetzBookIt@gmail.com <br>
               Phone Number: (xxx) xxx-xxxx
             </div>
         </div>
