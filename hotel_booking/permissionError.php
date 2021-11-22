@@ -27,14 +27,11 @@
         <hr>
         <div class="row" style="color: green">
             <div class="col-md-12 well" >
-              <h4 style="color: #ffbb2b" >Welcome to let's BOOK IT</h4><br>
-              <p>Let's BOOK IT is a place where you may pay to stay for a brief period of time. Inside a hotel room, amenities can range from a low-cost mattress in a tiny room to enormous suites with larger, higher-quality mattresses, a dresser, a refrigerator and other kitchen appliances, cushioned chairs, a flat-screen television, and en-suite bathrooms. Smaller, lower-cost hotels may only provide the most minimal services and amenities to its guests.</p>
+              <h4 style="color: #ffbb2b" >Permission Error</h4><br>
+              <p>We're sorry. You are either not logged in or do not have the permissions required for the requested page. Please login to a manager account to access the requested page.</p>
    
             </div>  
         </div>
-        <div>
-      <img src="./images/roomPics.jpg" alt="pic" style="width:100%;height:400px;">
-    </div>
         
     </div>
     
