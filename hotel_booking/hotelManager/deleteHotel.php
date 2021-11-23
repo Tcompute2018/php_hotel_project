@@ -2,32 +2,31 @@
     session_start();
     include_once '../admin/include/class.user.php'; 
     $user=new User(); 
-    if(!$user->get_session()) 
-    { 
-        header("location:login.php"); 
-    }    
-    $bookingID=$_GET['bookingID'];
+    if(!isset($_SESSION['userPerms']) || strcmp($_SESSION['userPerms'], 'manager') != 0){
+        header("location:../permissionError.php");
+    }      
+    $bookingID=$_GET['hotelID'];
     $hotelName=$_GET['hotelName'];
-    if(isset($_REQUEST[ 'submit'])) 
+
+    if(isset($_REQUEST['return'])){
+        echo "
+             <script type='text/javascript'>
+                 window.location.href = 'roomAvailability.php';
+             </script>"; 
+    }
+    if(isset($_REQUEST[ 'delete'])) 
     { 
         extract($_REQUEST); 
-        $result=$user->cancelBooking($bookingID);
+        $result=$user->deleteHotel($hotelID);
         if($result)
         {
             echo "<script type='text/javascript'>
                   alert('".$result."');
              </script>";
-             if(strcmp($_SESSION['userPerms'], 'manager') == 0){
              echo "
              <script type='text/javascript'>
-                 window.location.href = 'reservationInformation.php';
+                 window.location.href = 'roomAvailability.php';
              </script>"; 
-             }else{
-                echo "
-                <script type='text/javascript'>
-                    window.location.href = '../customerMenu.php';
-                </script>";
-             }
         }
     }
 
@@ -61,8 +60,9 @@
       
         <form action="" method="post" name="room_category">
             <div class="col-md-12 well" >
-              <h4 style="color: #ffbb2b" >Click Confirm if you want to cancel the reservation at "<?php echo $hotelName ?>"</h4><br>
-              <button type="submit" class="btn btn-lg btn-primary button" name="submit">Confirm</button>
+              <h4 style="color: #ffbb2b" >Are you sure you want to delete "<?php echo $hotelName ?>"</h4><br>
+              <button type="submit" class="btn btn-lg btn-danger button" name="delete" style ="width:200px;">Delete it!</button>
+              <button type="submit" class="btn btn-lg btn-primary button" name="return" style ="width:200px;">On second thought...</button>
             </div>  
         </form>
         

@@ -77,7 +77,9 @@ if(isset($_GET['q']))
     <div class="container">
        
        
-        <?php $user->makeNavBar();
+        <?php $user->makeNavBar();?>
+        <hr>
+        <?php
         
         
         $sql="SELECT * FROM User WHERE User.userID = '$U_id'";
@@ -93,16 +95,16 @@ if(isset($_GET['q']))
                     echo "
                             <div style = 'text-align:center' class='col-md-4 wellfix'>
                                 
-                                <h4 style = 'font-size: 30px'>Welcome Back</h4>
-                                <h4>".$row['full_name']."</h4>
+                                <h4 style = 'font-size: 25px'>Welcome Back ".$row['full_name']."</h4>
                                 <h4>Password: ******** </h4>
-                                <h4>email: ".$row['email']."</h4>
-                                                          
+                                <h4>Email: ".$row['email']."</h4>
+                                <h4>Phone Number: ".$row['phone_num']."</h4>
+                                <a href='customerUpdate.php'><button class='btn btn-lg btn-primary button'>Update Information </button> </a>                          
                             </div>
 
                          "; //echo end  
                     
-                         $sq2="SELECT h.name, hr.room_type, b.start_dt, b.end_dt FROM Booking b 
+                         $sq2="SELECT h.name, hr.room_type, b.start_dt, b.end_dt, b.bookingID, h.hotelID FROM Booking b 
                                 INNER JOIN Hotel_Rooms hr on hr.hrID = b.hrID
                                 INNER JOIN Hotel h on h.hotelID = hr.hotelID
                                 WHERE b.userID = '$U_id' "; /*or b.phone_num='$phone";*/
@@ -121,12 +123,13 @@ if(isset($_GET['q']))
                                     
                                              <div style = 'text-align:center' class='col-md-4 wellfix'>
                                           
-                                             <h4 style = 'font-size: 30px'>Your Booking at '".$row1['name']." </h4>
+                                             <h4 style = 'font-size: 18px'>Your Booking at '".$row1['name']."' </h4>
                                                  
-                                                 <h4>Check in date:".$row1['start_dt']."</h4>
-                                                 <h4>Check out date:".$row1['end_dt']."</h4>
-                                                 <h4>Room Size:".$row1['room_type']."</h4>
-                                                
+                                                 <h4 style = 'font-size: 18px'>Check in date: ".$row1['start_dt']."</h4>
+                                                 <h4 style = 'font-size: 18px'>Check out date: ".$row1['end_dt']."</h4>
+                                                 <h4 style = 'font-size: 18px'>Room Size: ".$row1['room_type']."</h4>
+                                                 <a href='reservationUpdate.php?bookID=".$row1['bookingID']."&hotelID=".$row1['hotelID']."&hotelName=".$row1['name']."'><button class='btn btn-lg btn-primary button'>Modify</button> </a>
+
                                              </div>
                                             
                                           ";
@@ -138,7 +141,8 @@ if(isset($_GET['q']))
                              }
                              else
                              {
-                                 echo "NO Data Exist";
+                                 echo "<h4>It seems you have no reservations at the current time<h4>";
+                                 echo "<h4>Click \"search\" to start finding hotels to book<h4>";
                              }
                          }
                          else
